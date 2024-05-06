@@ -7,10 +7,10 @@ time (tar -czf "${OUTPUT_FILE}.xz" .)
 
 # Use the pinata_api.py script to pin the file to IPFS
 echo "Uploading the compressed image to IPFS.."
-response=$(python pinataApi.py "${OUTPUT_FILE}.xz")
+response=$(python pinata_api.py "${OUTPUT_FILE}.xz")
 
 # Extract the IpfsHash from the response using Python
 echo "Extracting IpfsHash.."
-ipfs_hash=$(python -c "import json; data = $response; print(data.get('IpfsHash', ''))")
+ipfs_hash=$(python -c "import json; data = $response; print(data.get('IpfsH`ash', ''))")
 echo "Model definition IPFS hash: $ipfs_hash"
 
